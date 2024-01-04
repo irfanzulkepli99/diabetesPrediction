@@ -2,7 +2,8 @@ import numpy as np
 import pickle
 import streamlit as st
 
-trained_model = pickle.load(open("group3_trained_logistic.sav","rb"))
+with open("group3_trained_logistic.sav", "rb") as file:
+    trained_model = pickle.load(file)
 
 def predict_diabetes(input_data):
     input_data_as_numpy_array = np.asarray(input_data)
